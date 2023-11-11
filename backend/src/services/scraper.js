@@ -44,10 +44,12 @@ class Scraper {
         /* * Collect the names of the categories. */
         this.scrapedData = await this.page.$$eval('.row._no-g.-tac .col', (columns) => {
             return columns.slice(1, 4).map((column) => {
-                const categoryName = column.querySelector('p')?.innerText;
+                const categoryName = column.querySelector('p');
+                const categoryImg = column.querySelector('.ar .-rad4');
         
                 return {
-                    category_name: categoryName,
+                    category_name: categoryName?.innerText,
+                    category_img: categoryImg?.dataset?.src,
                     products: [],
                 };
             });
