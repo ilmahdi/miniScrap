@@ -5,7 +5,7 @@
 <template>
     <nav class="navbar">
         <ul class="nb-items">
-        <li class="nb-home" @click="showAllProducts">
+        <li class="nb-home">
             <router-link class="nb-item nb-home-space" to="/">
                 <img class="nb-home-icon" src="/logo.png">
                 <span >
@@ -14,8 +14,12 @@
             </router-link>
             <div class="nb-home-empty"></div>
         </li>
-        <li class="nb-catg nb-item" @click="showAllProducts">All Products</li>
-        <li class="nb-prod nb-item" @click="showAllCategories">All Categories</li>
+        <li class="nb-prod nb-item">
+
+            <router-link class="nb-item nb-home-space" to="/">
+                All Categories
+            </router-link>
+        </li>
         </ul>
   </nav>
   

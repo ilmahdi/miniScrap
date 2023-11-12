@@ -4,8 +4,8 @@ export default {
         productId() {
             return this.$route.params.id;
         },
-        isAllProducts() {
-            return this.productId >= this.fetchedData.length;
+        isIdValid() {
+            return this.productId < this.fetchedData.length && this.productId >= 0;
         },
         fetchedData() {
             return this.$store.getters.getFetchedData;
@@ -16,14 +16,11 @@ export default {
 </script>
 
 <template>
-    <div class="products">
+    <div class="products" v-if="isIdValid">
         <div class="pr-title-wrap">
 
-            <h2 class="pr-title" v-if="!isAllProducts"> 
+            <h2 class="pr-title"> 
                 {{fetchedData[productId].category_name}} 
-            </h2>
-            <h2 class="pr-title" v-else> 
-                All Products 
             </h2>
         </div>
         <div class="pr-products">
@@ -150,19 +147,25 @@ export default {
         font-size: 1rem;
         font-weight: 500;
         color: white;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .pr-item-id-btn:hover {
+        background-color: #ffa74f;
+
     }
     .pr-item-id-name {
         font-size: 1.1rem;
     }
     .pr-item-id-brand {
         font-size: 1.7rem;
-        font-weight: 500;
+        font-weight: 400;
 
     }
     .pr-item-val-prc {
         font-size: 0.96rem;
         font-weight: 600;
         text-align: end;
+        min-width: max-content;
     }
     .pr-item-val-oprc {
         display: flex;

@@ -16,7 +16,7 @@ async function launchServer() {
   await runScraper();
 
   app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Express server is running...`);
   });
 }
 
