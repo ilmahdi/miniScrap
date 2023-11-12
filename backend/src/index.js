@@ -15,8 +15,8 @@ app.use('/', route);
 async function launchServer() {
   await runScraper();
 
-  app.listen(port, () => {
-    console.log(`Express server is running...`);
+  app.listen(port, '0.0.0.0',() => {
+    console.log(`Express server is running on http://0.0.0.0:${port}.`);
   });
 }
 

@@ -157,13 +157,13 @@ async function runScraper() {
         /* * Create an instance of Scraper */
         scraper = new Scraper(urlToScrape);
         
-        console.log("runScraper: initialize the Scraper.")
+        console.log("runScraper: Wait for the Scraper initialization...")
         await scraper.initialize();
         
-        console.log("runScraper: Scrape the data.")
+        console.log("runScraper: Wait for the data scraping...")
         const scrapedData = await scraper.scrapeData();
         
-        console.log("runScraper: Store the data.")
+        console.log("runScraper: Wait for the data storing...")
         const outputFolderPath = path.join(global.rootDir, 'data');
         const outputFilePath = path.join(outputFolderPath, "scraped-data.json");
         await fs.mkdir(outputFolderPath, { recursive: true });

@@ -93,6 +93,8 @@ export default {
     }
     .pr-title {
         padding: 1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
     }
     .pr-items {
         display: flex;
@@ -196,6 +198,8 @@ export default {
         }
         .pr-item-details {
             flex-direction: column;
+            justify-content: start;
+            align-items: start;
             gap: 0.2rem;
 
         }
