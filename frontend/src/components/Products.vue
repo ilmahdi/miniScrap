@@ -200,7 +200,7 @@ export default {
             flex-direction: column;
             justify-content: start;
             align-items: start;
-            gap: 0.2rem;
+            gap: 0.3rem;
 
         }
         .pr-item-val {

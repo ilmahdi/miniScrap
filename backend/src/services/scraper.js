@@ -12,8 +12,19 @@ class Scraper {
 
     async initialize() {
 
+        let puppeteerArgs = {
+            headless: 'new',
+            args: [
+                '--no-sandbox',
+                '--headless',
+                '--disable-gpu',
+                '--disable-dev-shm-usage'
+            ]
+        }
+        if (process.env.PUPPETEER_RUNS_IN_DOCKER)
+            puppeteerArgs.executablePath = '/usr/bin/chromium-browser';
         /* * Launch the borweser in the new headless mode */
-        this.browser = await puppeteer.launch({headless: 'new'});
+        this.browser = await puppeteer.launch(puppeteerArgs);
 
         this.page = await this.browser.newPage();
 
@@ -23,7 +34,7 @@ class Scraper {
             height: 800
         });
 
-        this.page.setDefaultNavigationTimeout(10 * 1000);
+        this.page.setDefaultNavigationTimeout(60 * 1000);
     }
 
     async scrapeData() {

@@ -4,7 +4,13 @@ This is a simple guide on how to run the app using either Make or Docker Compose
 
 ## Prerequisites
 
+### Option 1: Make and Node.js
+
 - [Make](https://www.gnu.org/software/make/)
+- [Node.js](https://nodejs.org/)
+
+### Option 2: Docker and Docker Compose
+
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
